@@ -1,0 +1,75 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+import { ContenedorMonedas, Input, StyledIcon } from "./MonedaStyle";
+import MonedaSelect from "./MonedaOption";
+
+const Monedas = () => {
+  const [selectedCurrency, setSelectedCurrency] = useState("USD");
+  const [exchangeRate, setExchangeRate] = useState(1);
+  const [fixedNumber, setFixedNumber] = useState(50);
+
+  useEffect(() => {
+    const getExchangeRate = async () => {
+      try {
+        const response = await axios.get(
+          `https://v6.exchangerate-api.com/v6/14606b5ff1ee3c941b30f52e/latest/USD`
+        );
+        if (response.data && response.data.conversion_rates) {
+          const rate = response.data.conversion_rates[selectedCurrency];
+          if (rate) {
+            setExchangeRate(rate);
+          } else {
+            console.error(
+              `No se encontró una tasa de cambio para ${selectedCurrency}`
+            );
+          }
+        } else {
+          console.error(
+            "La respuesta de la API no incluye los datos esperados."
+          );
+        }
+      } catch (error) {
+        console.error(
+          `Ocurrió un error al obtener la tasa de cambio: ${error.message}`
+        );
+      }
+    };
+    getExchangeRate();
+  }, [selectedCurrency]);
+
+  const handleCurrencyChange = (event) => {
+    setSelectedCurrency(event.target.value);
+  };
+
+  const handleInputChange = (event) => {
+    const inputValue = parseFloat(event.target.value);
+    setFixedNumber(inputValue);
+  };
+
+  console.log(
+    selectedCurrency === "USD" ? fixedNumber : fixedNumber * exchangeRate
+  );
+
+  return (
+    <ContenedorMonedas>
+      <StyledIcon />
+      <MonedaSelect
+        selectedCurrency={selectedCurrency}
+        handleCurrencyChange={handleCurrencyChange}
+      />
+      <Input
+        type="number"
+        value={
+          selectedCurrency === "USD"
+            ? fixedNumber
+            : (fixedNumber * exchangeRate).toFixed(2)
+        }
+        onChange={handleInputChange}
+        readOnly
+      />
+    </ContenedorMonedas>
+  );
+};
+
+export default Monedas;
