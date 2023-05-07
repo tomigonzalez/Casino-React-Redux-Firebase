@@ -5,7 +5,6 @@ export const StyledButton = styled(motion.button)`
   cursor: pointer;
   border-radius: 20px;
   height: 35px;
-  width: 120px;
   color: white;
   background: none;
   border: 2px solid #f15a59;
@@ -23,5 +22,10 @@ export const StyledButton = styled(motion.button)`
     secondary &&
     css`
       background: #f15a59;
+    `}
+  ${({ width }) =>
+    width &&
+    css`
+      width: ${width}px;
     `}
 `;

@@ -28,11 +28,11 @@ const Navbar = () => {
         </LinkContainerStyled>
 
         <LinkContainerStyled>
-          <Button>
+          <Button width={150}>
             <NavLink to="/register">REGISTER</NavLink>
           </Button>
 
-          <Button secondary>
+          <Button secondary="true" width={150}>
             <NavLink to="/login">LOGIN</NavLink>
           </Button>
         </LinkContainerStyled>

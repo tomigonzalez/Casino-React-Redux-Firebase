@@ -32,7 +32,7 @@ export const ContainerImg = styled.div`
     height: auto;
   }
 `;
-export const ButtonRegisterPosition = styled.button`
+export const ButtonRegisterPosition = styled.div`
   background: NONE;
   position: absolute;
   top: 60%;

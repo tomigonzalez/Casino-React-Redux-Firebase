@@ -1,47 +1,67 @@
 import styled from "styled-components";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export const CardsContainer = styled.div`
-  display: grid;
-  grid-template-columns: ${({ gridLength }) => `repeat(${gridLength}, 1fr)`};
-  gap: 20px;
-  padding: 1rem;
-
-  overflow: scroll;
+  padding: 2rem;
 `;
+export const SliderBigWin = styled(Slider)`
+  display: flex;
+  overflow: hidden;
+`;
+
 export const Cards = styled.div`
   display: flex;
-  height: 150px;
+  height: 140px;
   border-radius: 20px;
   background-color: #34384a;
+  width: 280px;
 `;
 export const CardImg = styled.img`
   width: 50%;
   height: 100%;
-  border-radius: 16px;
+  border-radius: 20px;
   object-fit: cover;
 `;
 export const CardText = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 2px;
   width: 220px;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding-left: 10px;
+
+  & p {
+    margin: 0;
+    padding: 0;
+  }
 `;
 export const CardId = styled.div`
   display: flex;
-  flex-direction: column;
+  font-size: 10px;
+  color: white;
   gap: 5px;
   width: 220px;
 `;
 export const CardTitle = styled.h2`
   margin: 0;
-  margin-bottom: 5px;
-  font-weight: 500;
+  font-weight: 700;
+  color: var(--orange);
   letter-spacing: 0.05rem;
 `;
-export const CardPrice = styled.span`
+
+export const CardPrice = styled.div`
   font-weight: 800;
-  font-size: 1.5rem;
-  background: linear-gradient(83deg, #ffa100, #fb103d);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 1.2rem;
+  color: #0ed447;
+
+  & p {
+    margin-top: 14px;
+
+    color: white;
+    font-size: 10px;
+    font-weight: 100;
+  }
 `;

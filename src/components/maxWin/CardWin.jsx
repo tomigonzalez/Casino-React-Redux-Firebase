@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "../UI/button/Button";
 import {
   CardId,
@@ -11,13 +10,19 @@ import {
 
 const CardWin = ({ title, img, price, id }) => {
   return (
-    <Cards>
+    <Cards key={id}>
       <CardImg src={img} alt={title} />
       <CardText>
         <CardTitle>{title}</CardTitle>
-        <CardId>{id}</CardId>
-        <CardPrice>{price}</CardPrice>
-        <Button></Button>
+        <CardId>ID {id}</CardId>
+
+        <CardPrice>
+          <p>WON</p>
+          {price}$
+        </CardPrice>
+        <Button width={70} secondary="true">
+          VIEW
+        </Button>
       </CardText>
     </Cards>
   );

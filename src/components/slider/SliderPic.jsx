@@ -23,14 +23,18 @@ const SliderPic = () => {
       <ContainerImg>
         <Img src="img/1.png" alt="deposit" />
         <ButtonRegisterPosition>
-          <Button secondary>DEPOSIT</Button>
+          <Button secondary="true" width={110}>
+            DEPOSIT
+          </Button>
         </ButtonRegisterPosition>
       </ContainerImg>
 
       <ContainerImg>
         <Img src="img/2.png" alt="deposit" />
         <ButtonRegisterPosition>
-          <Button secondary>DEPOSIT</Button>
+          <Button secondary="true" width={110}>
+            DEPOSIT
+          </Button>
         </ButtonRegisterPosition>
       </ContainerImg>
 
@@ -38,7 +42,9 @@ const SliderPic = () => {
         <Img src="img/3.png" alt="deposit" />
 
         <ButtonRegisterPosition>
-          <Button secondary>DEPOSIT</Button>
+          <Button secondary="true" width={110}>
+            DEPOSIT
+          </Button>
         </ButtonRegisterPosition>
       </ContainerImg>
     </SliderConst>
