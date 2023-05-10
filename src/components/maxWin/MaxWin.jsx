@@ -13,6 +13,7 @@ const MaxWin = () => {
     autoplaySpeed: 2000,
     pauseOnHover: true,
   };
+
   return (
     <CardsContainer gridLength={BigWin.length}>
       <SliderBigWin {...settings}>

@@ -17,8 +17,8 @@ const CardWin = ({ title, img, price, id }) => {
         <CardId>ID {id}</CardId>
 
         <CardPrice>
-          <p>WON</p>
-          {price}$
+          <p>WIN</p>
+          {price}
         </CardPrice>
         <Button width={70} secondary="true">
           VIEW

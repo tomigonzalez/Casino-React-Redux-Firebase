@@ -1,4 +1,4 @@
-export const Machine = [
+export const products = [
   {
     id: 1,
     title: "Sweet Bonanza",
@@ -217,3 +217,14 @@ export const Machine = [
     category: "Online",
   },
 ];
+export const TotalProducts = products.length;
+
+export const Products = products.reduce((acc, product) => {
+  if (!acc[product.category]) {
+    acc[product.category] = [];
+  }
+
+  acc[product.category] = [...acc[product.category], product];
+
+  return acc;
+}, {});

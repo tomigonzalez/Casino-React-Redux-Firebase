@@ -1,14 +1,9 @@
 import React from "react";
-import {
-  BrowserRouter,
-  Route,
-  Routes as ReactRouterDom,
-} from "react-router-dom";
+import { Route, Routes as ReactRouterDom } from "react-router-dom";
 import Home from "../pages/home/Home";
 import CasinoVivo from "../pages/casinosvivo/CasinosVivo";
 import Deportes from "../pages/deportes/Deportes";
 import Slots from "../pages/slots/Slots";
-import Layout from "../components/layout/Layout";
 import Register from "../pages/register/Register";
 import Login from "../pages/login/Login";
 import Wrapper from "../components/wrapper/Wrapper";
