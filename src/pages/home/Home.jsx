@@ -5,6 +5,7 @@ import MaxWin from "../../components/maxWin/MaxWin";
 import Titles from "../../components/UI/title/Titles";
 import CardsProductos from "../../components/productos/CardsProductos";
 import Categorias from "../../components/clasificacion/Categorias";
+import Secciones from "../../components/secciones/Secciones";
 
 const Home = () => {
   return (
@@ -19,6 +20,8 @@ const Home = () => {
       <Categorias />
       {/* Populares Section*/}
       <CardsProductos />
+      {/*secciones*/}
+      <Secciones />
     </ContenedorHome>
   );
 };

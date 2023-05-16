@@ -1,22 +1,21 @@
-export const BigWin = [
+export const secciones = [
   {
     title: "Home",
     id: "1",
-    img: "/img/slots/.png",
+    img: "/img/slots/logo.png",
   },
   {
-    title: "Live Casino",
+    title: "Casino",
     id: "2",
     img: "/img/slots/casinovivo.png",
   },
   {
     title: "Slots",
     id: "3",
-    price: 2250,
     img: "/img/slots/slots.png",
   },
   {
-    title: "Spors Bet",
+    title: "Deportes",
     id: "4",
     img: "img/slots/deportes.png",
   },

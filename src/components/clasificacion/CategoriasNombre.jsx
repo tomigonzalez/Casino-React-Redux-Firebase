@@ -1,14 +1,23 @@
 import React from "react";
-import { Icono, Nombre, Posicion } from "./CategoriasStyle";
+import { Nombre, Posicion } from "./CategoriasStyle";
+import { useDispatch, useSelector } from "react-redux";
+import * as categoriesActions from "../../redux/categories/categories-action";
 
-const CategoriasNombre = ({ img, title, id, section }) => {
+const CategoriasNombre = ({ title, category }) => {
+  const selectedCategory = useSelector(
+    (state) => state.categories.selectedCategory
+  );
+  const dispatch = useDispatch();
+
   return (
-    <>
-      <Posicion>
-        <Icono>{img}</Icono>
-        <Nombre>{title}</Nombre>
-      </Posicion>
-    </>
+    <Posicion>
+      <Nombre
+        selected={category === selectedCategory}
+        onClick={() => dispatch(categoriesActions.selectCategory(category))}
+      >
+        {title}
+      </Nombre>
+    </Posicion>
   );
 };
 

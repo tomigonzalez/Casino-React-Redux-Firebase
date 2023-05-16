@@ -1,4 +1,4 @@
-export const products = [
+export const Machine = [
   {
     id: 1,
     title: "Sweet Bonanza",
@@ -18,7 +18,7 @@ export const products = [
     title: "Super Lion",
     img: "img/slots/16.png",
     desc: "",
-    category: "Slots",
+    category: ["Bonus"],
   },
   {
     id: 4,
@@ -60,14 +60,14 @@ export const products = [
     title: "Nunchucks Chicken",
     img: "img/slots/22.png",
     desc: "",
-    category: "Slots",
+    category: "New",
   },
   {
     id: 10,
     title: "Wild Five",
     img: "img/slots/23.png",
     desc: "",
-    category: "Slots",
+    category: "Bonus",
   },
   {
     id: 11,
@@ -81,28 +81,28 @@ export const products = [
     title: "The Dog House Megaways",
     img: "img/slots/25.png",
     desc: "",
-    category: "Slots",
+    category: "Bonus",
   },
   {
     id: 13,
     title: "John Hunter",
     img: "img/slots/26.png",
     desc: "",
-    category: "Slots",
+    category: "Best",
   },
   {
     id: 14,
     title: "The Dog House",
     img: "img/slots/27.png",
     desc: "",
-    category: "Slots",
+    category: "Best",
   },
   {
     id: 15,
     title: "Mustang Gold",
     img: "img/slots/28.png",
     desc: "",
-    category: "Slots",
+    category: "Best",
   },
   {
     id: 16,
@@ -123,14 +123,14 @@ export const products = [
     title: "Sweet Bonanza Xmas",
     img: "img/slots/31.png",
     desc: "",
-    category: "Slots",
+    category: "Best",
   },
   {
     id: 19,
     title: "Virtual Futbol PRO",
     img: "img/slots/depor9.png",
     desc: "",
-    category: "Deportivas",
+    category: "Best",
   },
   {
     id: 20,
@@ -144,7 +144,7 @@ export const products = [
     title: "Virtual Generation",
     img: "img/slots/depor11.png",
     desc: "",
-    category: "Deportivas",
+    category: "Best",
   },
   {
     id: 22,
@@ -158,7 +158,7 @@ export const products = [
     title: "Virtual Champions",
     img: "img/slots/depor13.png",
     desc: "",
-    category: "Deportivas",
+    category: "Bonus",
   },
   {
     id: 24,
@@ -179,7 +179,7 @@ export const products = [
     title: "Black Jack",
     img: "img/slots/online3.png",
     desc: "",
-    category: "Online",
+    category: "Bonus",
   },
   {
     id: 27,
@@ -207,19 +207,19 @@ export const products = [
     title: "Roulette",
     img: "img/slots/online7.png",
     desc: "",
-    category: "Online",
+    category: "New",
   },
   {
     id: 31,
     title: "Bet On Teen Patti",
     img: "img/slots/online8.png",
     desc: "",
-    category: "Online",
+    category: "Other",
   },
 ];
-export const TotalProducts = products.length;
+export const TotalProducts = Machine.length;
 
-export const Products = products.reduce((acc, product) => {
+export const Products = Machine.reduce((acc, product) => {
   if (!acc[product.category]) {
     acc[product.category] = [];
   }

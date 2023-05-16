@@ -2,6 +2,7 @@ import React from "react";
 import { CardsContainer, SliderBigWin } from "./MaxWinStyle";
 import { BigWin } from "../../data/BigWin";
 import CardWin from "./CardWin";
+import { useSelector } from "react-redux";
 
 const MaxWin = () => {
   let settings = {
@@ -14,10 +15,12 @@ const MaxWin = () => {
     pauseOnHover: true,
   };
 
+  const bigwins = useSelector((state) => state.bigwins.bigwins);
+
   return (
     <CardsContainer gridLength={BigWin.length}>
       <SliderBigWin {...settings}>
-        {BigWin.map((recomendado) => (
+        {bigwins.map((recomendado) => (
           <CardWin key={recomendado.id} {...recomendado} />
         ))}
       </SliderBigWin>

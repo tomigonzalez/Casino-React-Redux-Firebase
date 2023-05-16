@@ -1,17 +1,17 @@
 import React from "react";
-import { Categories } from "../../data/Categories";
+
 import CategoriasNombre from "./CategoriasNombre";
 import { ContenedorCategorias } from "./CategoriasStyle";
+import { useSelector } from "react-redux";
 
 const Categorias = () => {
+  const cat = useSelector((state) => state.categories.categories);
   return (
-    <>
-      <ContenedorCategorias>
-        {Categories.map((producto) => {
-          return <CategoriasNombre key={producto.id} {...producto} />;
-        })}
-      </ContenedorCategorias>
-    </>
+    <ContenedorCategorias>
+      {cat.map((producto) => (
+        <CategoriasNombre key={producto.id} {...producto} />
+      ))}
+    </ContenedorCategorias>
   );
 };
 

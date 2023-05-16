@@ -32,7 +32,7 @@ export const Icono = styled.div`
 `;
 export const Nombre = styled.div`
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: white;
+  color: ${({ selected }) => (selected ? "var(--orange)" : "white")};
 
   ${Posicion}:hover & {
     color: var(--orange);
