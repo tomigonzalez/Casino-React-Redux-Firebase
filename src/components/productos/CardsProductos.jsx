@@ -1,32 +1,70 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CardProducto from "./CardProducto";
-import { ProductosContainer } from "./CardsProductosStyle";
+import {
+  ButtonContPosition,
+  ButtonContainerStyled,
+  ProductosContainer,
+} from "./CardsProductosStyle";
 import { useSelector } from "react-redux";
+import { INITIAL_LIMIT } from "../../data/Constante";
+import Button from "../UI/button/Button";
+import { TotalProducts } from "../../data/Machine";
 
 const CardsProductos = () => {
-  let machine = useSelector((state) => state.machine.machine);
-  console.log(machine);
+  const [limit, setLimit] = useState(INITIAL_LIMIT);
+
+  const machine = useSelector((state) => state.machine.machine);
 
   const selectedCategory = useSelector(
     (state) => state.categories.selectedCategory
   );
 
+  let productsToRender = [];
+
   if (selectedCategory) {
-    console.log(selectedCategory);
-    machine = machine.filter(
+    // Si hay una categoría seleccionada distinta de "Section", se filtran los productos de machine
+    productsToRender = machine.filter(
       (producto) => producto.category === selectedCategory
     );
+  } else {
+    // Si no hay categoría seleccionada, se renderizan todos los productos de machine
+    productsToRender = machine;
   }
 
-  useEffect(() => console.log(machine), [machine]);
+  useEffect(() => setLimit(INITIAL_LIMIT), [productsToRender]);
 
   return (
     <>
       <ProductosContainer>
-        {machine.map((producto) => {
-          return <CardProducto key={producto.id} {...producto} />;
+        {productsToRender.map((producto) => {
+          if (selectedCategory || producto.id < limit) {
+            return <CardProducto key={producto.id} {...producto} />;
+          }
+          return null;
         })}
       </ProductosContainer>
+
+      {selectedCategory === null && (
+        <ButtonContPosition>
+          <ButtonContainerStyled>
+            <Button
+              width={100}
+              disabled={INITIAL_LIMIT === limit}
+              onClick={() => setLimit((prevLimit) => prevLimit - INITIAL_LIMIT)}
+            >
+              ver menos
+            </Button>
+            <Button
+              secondary="true"
+              width={100}
+              disabled={TotalProducts <= limit}
+              onClick={() => setLimit((prevLimit) => prevLimit + INITIAL_LIMIT)}
+            >
+              ver mas
+            </Button>
+          </ButtonContainerStyled>
+        </ButtonContPosition>
+      )}
     </>
   );
 };

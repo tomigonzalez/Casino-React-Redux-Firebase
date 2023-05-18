@@ -10,12 +10,13 @@ export const ContentSection = styled.div`
 `;
 
 export const SeccionConteiner = styled.div`
+  cursor: pointer;
   align-items: center;
   display: flex;
   background-color: rgb(52, 56, 74);
   border-radius: 30px;
   width: 300px;
-  height: 200px;
+  height: 190px;
   text-align: center;
 
   h2 {

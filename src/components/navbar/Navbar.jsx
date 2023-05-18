@@ -17,10 +17,18 @@ const Navbar = () => {
           <img src="img/logo.png" alt="logo" />
         </LogoStyled>
         <LinkContainerStyled>
-          <NavLink to="/">HOME</NavLink>
-          <NavLink to="/slots">SLOTS</NavLink>
-          <NavLink to="/deportes">DEPORTES</NavLink>
-          <NavLink to="/casino">CASINOS EN VIVO</NavLink>
+          <NavLink to="/">
+            <p>HOME</p>
+          </NavLink>
+          <NavLink to="/slots">
+            <p>SLOTS</p>
+          </NavLink>
+          <NavLink to="/deportes">
+            <p>DEPORTES</p>
+          </NavLink>
+          <NavLink to="/casino">
+            <p>CASINOS EN VIVO</p>
+          </NavLink>
         </LinkContainerStyled>
 
         <LinkContainerStyled>

@@ -1,12 +1,13 @@
 import React from "react";
-import { secciones } from "../../data/Clases";
 import { ContentSection } from "./SeccionesStyle";
 import Seccion from "./Seccion";
+import { useSelector } from "react-redux";
 
 const Secciones = () => {
+  const seccion = useSelector((state) => state.secciones.secciones);
   return (
     <ContentSection>
-      {secciones.map((producto) => {
+      {seccion.map((producto) => {
         return <Seccion key={producto.id} {...producto} />;
       })}
     </ContentSection>

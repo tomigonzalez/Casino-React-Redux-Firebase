@@ -3,6 +3,7 @@ import { TotalProducts, Machine } from "../../data/Machine";
 
 const INITIAL_STATE = {
   machine: Machine,
+
   totalProducts: TotalProducts,
 };
 

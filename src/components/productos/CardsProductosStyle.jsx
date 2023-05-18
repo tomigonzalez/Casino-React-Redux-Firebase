@@ -35,3 +35,14 @@ export const Imag = styled.img`
     transform: scale(1.05);
   }
 `;
+export const ButtonContainerStyled = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+`;
+
+export const ButtonContPosition = styled.div`
+  display: FLEX;
+  place-content: CENTER;
+  width: 100%;
+`;

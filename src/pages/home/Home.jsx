@@ -6,8 +6,13 @@ import Titles from "../../components/UI/title/Titles";
 import CardsProductos from "../../components/productos/CardsProductos";
 import Categorias from "../../components/clasificacion/Categorias";
 import Secciones from "../../components/secciones/Secciones";
+import { useSelector } from "react-redux";
 
 const Home = () => {
+  const selectedCategory = useSelector(
+    (state) => state.categories.selectedCategory
+  );
+  console.log(selectedCategory);
   return (
     <ContenedorHome>
       <SliderPic />
@@ -21,7 +26,7 @@ const Home = () => {
       {/* Populares Section*/}
       <CardsProductos />
       {/*secciones*/}
-      <Secciones />
+      {selectedCategory === "Section" && <Secciones />}
     </ContenedorHome>
   );
 };
