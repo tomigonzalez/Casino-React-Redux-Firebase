@@ -1,7 +1,13 @@
 import React from "react";
+import CardsProductos from "../../components/productos/CardsProductos";
+import { ContenedorSlots } from "./SlotStyle";
 
 const Slots = () => {
-  return <div>SLOTS</div>;
+  return (
+    <ContenedorSlots>
+      <CardsProductos categoria="slots" />
+    </ContenedorSlots>
+  );
 };
 
 export default Slots;

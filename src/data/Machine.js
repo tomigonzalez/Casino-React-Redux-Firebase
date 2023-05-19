@@ -5,6 +5,7 @@ export const Machine = [
     img: "img/slots/1.png",
     desc: "",
     category: "Slots",
+    category1: "slots",
   },
   {
     id: 2,
@@ -12,13 +13,15 @@ export const Machine = [
     img: "img/slots/2.png",
     desc: "",
     category: "Slots",
+    category1: "slots",
   },
   {
     id: 3,
     title: "Super Lion",
     img: "img/slots/16.png",
     desc: "",
-    category: ["Bonus"],
+    category: "Bonus",
+    category1: "slots",
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ export const Machine = [
     img: "img/slots/17.png",
     desc: "",
     category: "Slots",
+    category1: "slots",
   },
   {
     id: 5,
@@ -33,6 +37,7 @@ export const Machine = [
     img: "img/slots/18.png",
     desc: "",
     category: "Slots",
+    category1: "slots",
   },
   {
     id: 6,
@@ -40,6 +45,7 @@ export const Machine = [
     img: "img/slots/19.png",
     desc: "",
     category: "Slots",
+    category1: "slots",
   },
   {
     id: 7,
@@ -47,6 +53,7 @@ export const Machine = [
     img: "img/slots/20.png",
     desc: "",
     category: "Slots",
+    category1: "slots",
   },
   {
     id: 8,
@@ -54,6 +61,7 @@ export const Machine = [
     img: "img/slots/21.png",
     desc: "",
     category: "Slots",
+    category1: "slots",
   },
   {
     id: 9,
@@ -61,6 +69,7 @@ export const Machine = [
     img: "img/slots/22.png",
     desc: "",
     category: "New",
+    category1: "slots",
   },
   {
     id: 10,
@@ -68,6 +77,7 @@ export const Machine = [
     img: "img/slots/23.png",
     desc: "",
     category: "Bonus",
+    category1: "slots",
   },
   {
     id: 11,
@@ -75,6 +85,7 @@ export const Machine = [
     img: "img/slots/24.png",
     desc: "",
     category: "Slots",
+    category1: "slots",
   },
   {
     id: 12,
@@ -82,6 +93,7 @@ export const Machine = [
     img: "img/slots/25.png",
     desc: "",
     category: "Bonus",
+    category1: "slots",
   },
   {
     id: 13,
@@ -89,6 +101,7 @@ export const Machine = [
     img: "img/slots/26.png",
     desc: "",
     category: "Best",
+    category1: "slots",
   },
   {
     id: 14,
@@ -96,6 +109,7 @@ export const Machine = [
     img: "img/slots/27.png",
     desc: "",
     category: "Best",
+    category1: "slots",
   },
   {
     id: 15,
@@ -103,6 +117,7 @@ export const Machine = [
     img: "img/slots/28.png",
     desc: "",
     category: "Best",
+    category1: "slots",
   },
   {
     id: 16,
@@ -110,6 +125,7 @@ export const Machine = [
     img: "img/slots/29.png",
     desc: "",
     category: "Slots",
+    category1: "slots",
   },
   {
     id: 17,
@@ -117,6 +133,7 @@ export const Machine = [
     img: "img/slots/30.png",
     desc: "",
     category: "Slots",
+    category1: "slots",
   },
   {
     id: 18,
@@ -124,6 +141,7 @@ export const Machine = [
     img: "img/slots/31.png",
     desc: "",
     category: "Best",
+    category1: "slots",
   },
   {
     id: 19,
@@ -131,6 +149,7 @@ export const Machine = [
     img: "img/slots/depor9.png",
     desc: "",
     category: "Best",
+    category1: "deportes",
   },
   {
     id: 20,
@@ -138,6 +157,7 @@ export const Machine = [
     img: "img/slots/depor10.png",
     desc: "",
     category: "Deportivas",
+    category1: "deportes",
   },
   {
     id: 21,
@@ -145,6 +165,7 @@ export const Machine = [
     img: "img/slots/depor11.png",
     desc: "",
     category: "Best",
+    category1: "deportes",
   },
   {
     id: 22,
@@ -152,6 +173,7 @@ export const Machine = [
     img: "img/slots/depor12.png",
     desc: "",
     category: "Deportivas",
+    category1: "deportes",
   },
   {
     id: 23,
@@ -159,6 +181,7 @@ export const Machine = [
     img: "img/slots/depor13.png",
     desc: "",
     category: "Bonus",
+    category1: "deportes",
   },
   {
     id: 24,
@@ -166,6 +189,7 @@ export const Machine = [
     img: "img/slots/depor14.png",
     desc: "",
     category: "Deportivas",
+    category1: "deportes",
   },
   {
     id: 25,
@@ -173,6 +197,7 @@ export const Machine = [
     img: "img/slots/depor15.png",
     desc: "",
     category: "Deportivas",
+    category1: "deportes",
   },
   {
     id: 26,
@@ -180,6 +205,7 @@ export const Machine = [
     img: "img/slots/online3.png",
     desc: "",
     category: "Bonus",
+    category1: "online",
   },
   {
     id: 27,
@@ -187,6 +213,7 @@ export const Machine = [
     img: "img/slots/online4.png",
     desc: "",
     category: "Online",
+    category1: "online",
   },
   {
     id: 28,
@@ -194,6 +221,7 @@ export const Machine = [
     img: "img/slots/online5.png",
     desc: "",
     category: "Online",
+    category1: "online",
   },
   {
     id: 29,
@@ -201,6 +229,7 @@ export const Machine = [
     img: "img/slots/online6.png",
     desc: "",
     category: "Online",
+    category1: "online",
   },
   {
     id: 30,
@@ -208,6 +237,7 @@ export const Machine = [
     img: "img/slots/online7.png",
     desc: "",
     category: "New",
+    category1: "online",
   },
   {
     id: 31,
@@ -215,6 +245,7 @@ export const Machine = [
     img: "img/slots/online8.png",
     desc: "",
     category: "Other",
+    category1: "online",
   },
 ];
 export const TotalProducts = Machine.length;

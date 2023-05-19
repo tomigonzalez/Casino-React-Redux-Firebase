@@ -25,6 +25,9 @@ export const LinkContainerStyled = styled.div`
   gap: 20px;
   font-size: 14px;
 
+  & p {
+    margin: 0;
+  }
   & p:hover {
     color: var(--orange);
   }

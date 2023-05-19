@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { TotalProducts, Machine } from "../../data/Machine";
+import { persistor } from "../store";
 
 const INITIAL_STATE = {
   machine: Machine,
@@ -18,11 +19,13 @@ const machineSlice = createSlice({
   name: "products",
   initialState: INITIAL_STATE,
   reducers: {
-    filters: (state, id) => {},
+    reset: (state) => {
+      persistor.purge();
+    },
   },
 });
 
 export const machineReducer = machineSlice.reducer;
-export const { filters } = machineSlice.actions;
+export const { reset } = machineSlice.actions;
 
 export default machineReducer;

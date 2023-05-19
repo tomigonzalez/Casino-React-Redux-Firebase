@@ -6,7 +6,7 @@ import machineReducer from "./machine/machine-reducer";
 import bigwinReducer from "./bigwins/bigwins-reducer";
 
 import storage from "redux-persist/es/storage";
-import secccionesReducer from "./seccion/seccion-reducer";
+import seccionesReducer from "./seccion/seccion-reducer";
 
 const persistConfig = {
   key: "root",
@@ -18,7 +18,7 @@ const rootReducer = combineReducers({
   machine: machineReducer,
   categories: categoriesReducer,
   bigwins: bigwinReducer,
-  secciones: secccionesReducer,
+  secciones: seccionesReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

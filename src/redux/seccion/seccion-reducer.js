@@ -4,11 +4,11 @@ const INITIAL_STATE = {
   secciones: secciones,
 };
 
-const secccionesReducer = (state = INITIAL_STATE, action) => {
+const seccionesReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     default:
       return state;
   }
 };
 
-export default secccionesReducer;
+export default seccionesReducer;

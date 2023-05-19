@@ -12,6 +12,7 @@ const Home = () => {
   const selectedCategory = useSelector(
     (state) => state.categories.selectedCategory
   );
+
   console.log(selectedCategory);
   return (
     <ContenedorHome>
