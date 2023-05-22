@@ -8,20 +8,19 @@ import {
 import { useSelector } from "react-redux";
 import { INITIAL_LIMIT } from "../../data/Constante";
 import Button from "../UI/button/Button";
-import { TotalProducts } from "../../data/Machine";
 
 const CardsProductos = ({ categoria }) => {
   const [limit, setLimit] = useState(INITIAL_LIMIT);
+
   const machine = useSelector((state) => state.machine.machine);
 
-  let productsToRender = [];
-
-  const selectedCategory = useSelector(
+  let selectedCategory = useSelector(
     (state) => state.categories.selectedCategory
   );
 
+  let productsToRender = [];
+
   if (selectedCategory) {
-    // Si hay una categoría seleccionada distinta de "Section", se filtran los productos de machine
     productsToRender = machine.filter(
       (producto) => producto.category === selectedCategory
     );
@@ -30,46 +29,22 @@ const CardsProductos = ({ categoria }) => {
     productsToRender = machine;
   }
 
-  // Filtra los productos por la categoría "slots" si se proporciona la prop "categoria"
-  // if (categoria) {
-  //   productsToRender = productsToRender.filter(
-  //     (producto) => producto.category1 === "slots"
-  //   );
-  // }
-
-  switch (categoria) {
-    case "slots":
-      productsToRender = machine.filter(
-        (producto) => producto.category1 === "slots"
-      );
-
-      // Código a ejecutar si variable es igual a valor1
-      break;
-    case "deportes":
-      productsToRender = machine.filter(
-        (producto) => producto.category1 === "deportes"
-      );
-      // Código a ejecutar si variable es igual a valor2
-      break;
-    case "online":
-      productsToRender = machine.filter(
-        (producto) => producto.category1 === "online"
-      );
-      // Código a ejecutar si variable es igual a valor3
-      break;
-    default:
-      break;
+  if (categoria) {
+    selectedCategory = null;
+    productsToRender = machine.filter(
+      (producto) => producto.category1 === categoria
+    );
   }
+
   useEffect(() => {
-    setLimit(INITIAL_LIMIT);
-    // Ejecuta la acción "reset" para reiniciar el estado de la máquina
+    setLimit(INITIAL_LIMIT); // Ejecuta la acción "reset" para reiniciar el estado de la máquina
   }, [selectedCategory]);
 
   return (
     <>
       <ProductosContainer>
         {productsToRender.map((producto) => {
-          if (selectedCategory || producto.id <= limit) {
+          if (selectedCategory || productsToRender.indexOf(producto) <= limit) {
             return <CardProducto key={producto.id} {...producto} />;
           }
           return null;
@@ -81,7 +56,7 @@ const CardsProductos = ({ categoria }) => {
           <ButtonContainerStyled>
             <Button
               width={100}
-              disabled={INITIAL_LIMIT === limit}
+              disabled={limit === INITIAL_LIMIT}
               onClick={() => setLimit((prevLimit) => prevLimit - INITIAL_LIMIT)}
             >
               ver menos
@@ -89,7 +64,7 @@ const CardsProductos = ({ categoria }) => {
             <Button
               secondary="true"
               width={100}
-              disabled={TotalProducts <= limit}
+              disabled={productsToRender.length <= limit}
               onClick={() => setLimit((prevLimit) => prevLimit + INITIAL_LIMIT)}
             >
               ver mas
