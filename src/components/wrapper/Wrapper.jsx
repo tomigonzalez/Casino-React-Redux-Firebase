@@ -6,6 +6,7 @@ const WrapperStyled = styled.div`
   max-width: 1100px;
   width: 90%;
   margin: 0 auto;
+  justify-content: center;
 `;
 
 const Wrapper = ({ children }) => {

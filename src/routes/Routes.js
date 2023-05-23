@@ -8,6 +8,9 @@ import Register from "../pages/register/Register";
 import Login from "../pages/login/Login";
 import Wrapper from "../components/wrapper/Wrapper";
 
+import PageNotFound from "../pages/pagenotfound/PageNotFound";
+import ForgotPassword from "../pages/forgotpassword/ForgotPassword";
+
 const Routes = () => {
   return (
     <>
@@ -19,6 +22,8 @@ const Routes = () => {
           <Route path="/slots" element={<Slots />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="*" element={<PageNotFound />} />
         </ReactRouterDom>
       </Wrapper>
     </>

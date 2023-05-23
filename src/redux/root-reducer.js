@@ -7,11 +7,12 @@ import bigwinReducer from "./bigwins/bigwins-reducer";
 
 import storage from "redux-persist/es/storage";
 import seccionesReducer from "./seccion/seccion-reducer";
+import userReducer from "./user/user-reducer";
 
 const persistConfig = {
   key: "root",
   storage: storage,
-  whiteList: [],
+  whiteList: ["user"],
 };
 
 const rootReducer = combineReducers({
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   categories: categoriesReducer,
   bigwins: bigwinReducer,
   secciones: seccionesReducer,
+  user: userReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);
