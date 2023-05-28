@@ -6,26 +6,34 @@ import Deportes from "../pages/deportes/Deportes";
 import Slots from "../pages/slots/Slots";
 import Register from "../pages/register/Register";
 import Login from "../pages/login/Login";
-import Wrapper from "../components/wrapper/Wrapper";
 
 import PageNotFound from "../pages/pagenotfound/PageNotFound";
 import ForgotPassword from "../pages/forgotpassword/ForgotPassword";
+import ProtectedRoute from "../components/protectedroute/ProtectedRoute";
 
 const Routes = () => {
   return (
     <>
-      <Wrapper>
-        <ReactRouterDom>
-          <Route path="/" element={<Home />} />
-          <Route path="/casino" element={<CasinoVivo />} />
-          <Route path="/deportes" element={<Deportes />} />
-          <Route path="/slots" element={<Slots />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/forgotpassword" element={<ForgotPassword />} />
-          <Route path="*" element={<PageNotFound />} />
-        </ReactRouterDom>
-      </Wrapper>
+      <ReactRouterDom>
+        <Route path="/" element={<Home />} />
+        <Route path="/casino" element={<CasinoVivo />} />
+        <Route path="/deportes" element={<Deportes />} />
+        <Route path="/slots" element={<Slots />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+
+        <Route
+          path="/checkout"
+          element={
+            <ProtectedRoute redirectTo="/register">
+              <Register></Register>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route path="*" element={<PageNotFound />} />
+      </ReactRouterDom>
     </>
   );
 };

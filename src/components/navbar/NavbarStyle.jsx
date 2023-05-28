@@ -1,3 +1,4 @@
+import { BiDownArrow } from "react-icons/bi";
 import styled from "styled-components";
 
 export const NavbarContainerStyled = styled.header`
@@ -31,4 +32,8 @@ export const LinkContainerStyled = styled.div`
   & p:hover {
     color: var(--orange);
   }
+`;
+export const BiDownArrowIcon = styled(BiDownArrow)`
+  font-size: 80%;
+  padding-left: 5px;
 `;

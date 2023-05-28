@@ -51,7 +51,7 @@ export const DecorationContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: auto;
   height: 100%;
   z-index: 0;
   display: flex;
@@ -61,23 +61,21 @@ export const DecorationContainer = styled.div`
 `;
 export const Seven = styled.img`
   position: relative;
-  top: -21px;
-  left: -400px;
 `;
 export const Herradura = styled.img`
   position: relative;
-  top: 101px;
-  left: 300px;
+  top: 29%;
+  left: 66%;
 `;
 export const Trebol = styled.img`
   position: relative;
-  top: -221px;
-  left: 400px;
+  top: -54%;
+  left: 100%;
 `;
 export const ContenedorSocial = styled.div`
   display: flex;
   flex-flow: row;
-  width: 30%;
+  width: 100%;
   justify-content: space-evenly;
   margin-top: 20px;
 `;

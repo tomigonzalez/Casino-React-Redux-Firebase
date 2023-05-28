@@ -4,8 +4,8 @@ export const ProductosContainer = styled.div`
   display: grid;
   place-items: center;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, 200px);
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, 300px);
+  gap: 1rem;
   padding: 1rem;
 `;
 

@@ -16,7 +16,8 @@ import useRedirect from "../../hooks/useRedirect";
 import { useLocation } from "react-router-dom";
 
 const Register = () => {
-  useRedirect("/");
+  const { state } = useLocation();
+  useRedirect(state?.redirectedFromCheckout ? "/checkout" : "/");
 
   return (
     <LoginContainerStyled>

@@ -13,9 +13,10 @@ const SliderPic = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1, // mostrar 1 elemento a la vez
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    arrows: false,
   };
 
   return (
@@ -33,7 +34,7 @@ const SliderPic = () => {
         <Img src="img/2.png" alt="deposit" />
         <ButtonRegisterPosition>
           <Button secondary="true" width={110}>
-            DEPOSIT
+            DEPOSITAR
           </Button>
         </ButtonRegisterPosition>
       </ContainerImg>
@@ -43,7 +44,7 @@ const SliderPic = () => {
 
         <ButtonRegisterPosition>
           <Button secondary="true" width={110}>
-            DEPOSIT
+            DEPOSITAR
           </Button>
         </ButtonRegisterPosition>
       </ContainerImg>

@@ -3,46 +3,50 @@ import {
   NavbarContainerStyled,
   LogoStyled,
   LinkContainerStyled,
+  BiDownArrowIcon,
 } from "./NavbarStyle";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Monedas from "../monedas/Monedas";
+import * as userAction from "../../redux/user/user-action";
+import LinkContainer from "./linkcontainer/LinkContainer";
+import { useDispatch, useSelector } from "react-redux";
+import LinkContainerButton from "./linkcontainerbutton/LinkContainerButton";
 import Button from "../UI/button/Button";
+import ModalUser from "./modaluser/ModalUser";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const currentUser = useSelector((state) => state.user.currentUser);
+  const dispatch = useDispatch();
+
   return (
     <>
       <NavbarContainerStyled>
+        <ModalUser />
         <LogoStyled onClick={() => navigate("/")}>
           <img src="img/logo.png" alt="logo" />
         </LogoStyled>
-        <LinkContainerStyled>
-          <NavLink to="/">
-            <p>HOME</p>
-          </NavLink>
-          <NavLink to="/slots">
-            <p>SLOTS</p>
-          </NavLink>
-          <NavLink to="/deportes">
-            <p>DEPORTES</p>
-          </NavLink>
-          <NavLink to="/casino">
-            <p>CASINOS EN VIVO</p>
-          </NavLink>
-        </LinkContainerStyled>
+        <LinkContainer></LinkContainer>
 
         <LinkContainerStyled>
           <Monedas></Monedas>
         </LinkContainerStyled>
 
-        <LinkContainerStyled>
-          <Button width={150}>
-            <NavLink to="/register">REGISTER</NavLink>
-          </Button>
-
-          <Button secondary="true" width={150}>
-            <NavLink to="/login">LOGIN</NavLink>
-          </Button>
+        <LinkContainerStyled
+          onClick={() =>
+            currentUser
+              ? dispatch(userAction.toggleMenuHidden())
+              : navigate("/register")
+          }
+        >
+          {currentUser ? (
+            <Button width={100}>
+              {currentUser.displayName}
+              <BiDownArrowIcon />
+            </Button>
+          ) : (
+            <LinkContainerButton />
+          )}
         </LinkContainerStyled>
       </NavbarContainerStyled>
     </>

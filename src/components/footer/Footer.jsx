@@ -25,9 +25,9 @@ const Footer = () => {
   return (
     <FooterContainerStyled>
       <DecorationContainer>
-        <Seven src="img/slots/siete.png" alt="siete"></Seven>
+        {/* <Seven src="img/slots/siete.png" alt="siete"></Seven>
         <Herradura src="img/slots/herradura.png" alt="herradura"></Herradura>
-        <Trebol src="img/slots/trebol.png" alt="trebol"></Trebol>
+        <Trebol src="img/slots/trebol.png" alt="trebol"></Trebol> */}
       </DecorationContainer>
       <LinksContainerStyled className="links">
         <LinksContenedor>

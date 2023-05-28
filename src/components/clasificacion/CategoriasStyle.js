@@ -3,15 +3,15 @@ import styled from "styled-components";
 export const ContenedorCategorias = styled.div`
   display: flex;
   flex-flow: row;
-  place-content: SPACE-BETWEEN;
+  place-content: space-evenly;
   position: relative;
   width: auto;
   &::after {
     content: "";
     position: absolute;
     bottom: -3px;
-    left: -30px;
-    right: -30px;
+    left: 0;
+    right: 0;
     border-bottom: 2px solid white;
   }
 `;

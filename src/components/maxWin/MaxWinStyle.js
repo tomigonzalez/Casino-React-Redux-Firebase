@@ -5,10 +5,14 @@ import "slick-carousel/slick/slick-theme.css";
 
 export const CardsContainer = styled.div`
   padding: 2rem;
+  display: flex;
+  place-content: center;
 `;
 export const SliderBigWin = styled(Slider)`
   display: flex;
   overflow: hidden;
+  place-content: CENTER;
+  width: 80%;
 `;
 
 export const Cards = styled.div`
