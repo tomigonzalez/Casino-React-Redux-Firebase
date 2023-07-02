@@ -5,7 +5,7 @@ const INITIAL_STATE = {
 };
 
 const bigwinReducer = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
+  switch (action) {
     default:
       return state;
   }

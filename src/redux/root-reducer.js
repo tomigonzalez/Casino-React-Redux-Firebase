@@ -8,6 +8,9 @@ import bigwinReducer from "./bigwins/bigwins-reducer";
 import storage from "redux-persist/es/storage";
 import seccionesReducer from "./seccion/seccion-reducer";
 import userReducer from "./user/user-reducer";
+import couponsReducer from "./coupons/coupons-reducer";
+import cartReducer from "./cart/cart-reducer";
+import ordersReducer from "./orders/orders-reducer";
 
 const persistConfig = {
   key: "root",
@@ -21,6 +24,9 @@ const rootReducer = combineReducers({
   bigwins: bigwinReducer,
   secciones: seccionesReducer,
   user: userReducer,
+  coupons: couponsReducer,
+  cart: cartReducer,
+  orders: ordersReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

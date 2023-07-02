@@ -25,11 +25,7 @@ const Routes = () => {
 
         <Route
           path="/checkout"
-          element={
-            <ProtectedRoute redirectTo="/register">
-              <Register></Register>
-            </ProtectedRoute>
-          }
+          element={<ProtectedRoute redirectTo="/login"></ProtectedRoute>}
         />
 
         <Route path="*" element={<PageNotFound />} />

@@ -13,6 +13,8 @@ import { useDispatch, useSelector } from "react-redux";
 import LinkContainerButton from "./linkcontainerbutton/LinkContainerButton";
 import Button from "../UI/button/Button";
 import ModalUser from "./modaluser/ModalUser";
+import Cart from "./cart/Cart";
+import ModalCart from "./modalcart/ModalCart";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -23,6 +25,7 @@ const Navbar = () => {
     <>
       <NavbarContainerStyled>
         <ModalUser />
+        <ModalCart />
         <LogoStyled onClick={() => navigate("/")}>
           <img src="img/logo.png" alt="logo" />
         </LogoStyled>
@@ -32,15 +35,14 @@ const Navbar = () => {
           <Monedas></Monedas>
         </LinkContainerStyled>
 
-        <LinkContainerStyled
-          onClick={() =>
-            currentUser
-              ? dispatch(userAction.toggleMenuHidden())
-              : navigate("/register")
-          }
-        >
+        {currentUser ? <Cart></Cart> : <Cart invalid={true}></Cart>}
+
+        <LinkContainerStyled>
           {currentUser ? (
-            <Button width={100}>
+            <Button
+              width={100}
+              onClick={() => dispatch(userAction.toggleMenuHidden())}
+            >
               {currentUser.displayName}
               <BiDownArrowIcon />
             </Button>

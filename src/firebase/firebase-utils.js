@@ -18,11 +18,15 @@ import {
   getDoc,
   setDoc,
   getFirestore,
-  
+  collection,
+  addDoc,
 } from "firebase/firestore";
-const app = initializeApp(firebaseConfig);
 
+const app = initializeApp(firebaseConfig);
 export const firestore = getFirestore(app);
+export const auth = getAuth();
+
+auth.useDeviceLanguage();
 
 export const createUserProfileDocument = async (userAuth) => {
   if (!userAuth || !userAuth.emailVerified) return;
@@ -48,12 +52,50 @@ export const createUserProfileDocument = async (userAuth) => {
   }
   return userRef;
 };
+export const addToCart = async (userId, product) => {
+  const userRef = doc(firestore, `users/${userId}`);
+  const userSnapshot = await getDoc(userRef);
 
-export const auth = getAuth();
+  if (userSnapshot.exists()) {
+    const userData = userSnapshot.data();
+    const currentCart = userData.cart || [];
+    const updatedCart = [...currentCart, product];
+
+    await setDoc(userRef, { ...userData, cart: updatedCart });
+    console.log("Product added to cart:", product);
+  } else {
+    await setDoc(userRef, { cart: [product] });
+    console.log("Product added to cart:", product);
+  }
+};
+export const handleAddToCart = async (userId, productId) => {
+  await addToCart(userId, productId);
+};
+export const getCartItems = async (userId) => {
+  const userRef = doc(firestore, `users/${userId}`);
+  const userSnapshot = await getDoc(userRef);
+
+  if (userSnapshot.exists()) {
+    const userData = userSnapshot.data();
+    const cart = userData.cart || [];
+
+    return cart;
+  }
+
+  return [];
+};
+
+export const addToWallet = async (userId, amount) => {
+  const walletRef = collection(firestore, `wallets`);
+  try {
+    await addDoc(walletRef, { userId, amount });
+    console.log("Amount added to wallet:", amount);
+  } catch (error) {
+    console.error("Error adding amount to wallet:", error);
+  }
+};
 
 console.log("auth ==> ", auth);
-
-auth.useDeviceLanguage();
 
 export const createUser = (email, password, displayName) =>
   createUserWithEmailAndPassword(auth, email, password).then((userCredencial) =>

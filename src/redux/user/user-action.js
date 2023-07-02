@@ -5,6 +5,7 @@ export const setCurrentUser = (user) => ({
   type: SET_CURRENT_USER,
   payload: user,
 });
+
 export const toggleMenuHidden = () => ({
   type: TOGGLE_MENU_HIDDEN,
 });

@@ -7,6 +7,7 @@ import CardsProductos from "../../components/productos/CardsProductos";
 import Categorias from "../../components/clasificacion/Categorias";
 import Secciones from "../../components/secciones/Secciones";
 import { useSelector } from "react-redux";
+import Coupons from "../../components/Coupons/Coupons";
 
 const Home = () => {
   const selectedCategory = useSelector(
@@ -17,6 +18,12 @@ const Home = () => {
   return (
     <ContenedorHome>
       <SliderPic />
+      <Titles>
+        <span>TO</span> DEPOSIT
+      </Titles>
+      {/* Categorias Coupons */}
+      <Coupons />
+
       <Titles>
         <span>BIG</span> WINS
       </Titles>
